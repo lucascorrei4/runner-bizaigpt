@@ -22,6 +22,7 @@ WORKDIR /app
 COPY --from=builder /app/node_modules ./node_modules
 # Copy compiled output
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/package.json ./package.json
 
 # Environment defaults (can be overridden in EasyPanel)
 ENV NODE_ENV=production
